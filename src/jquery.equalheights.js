@@ -61,9 +61,9 @@ $.fn.equalHeights = function (options) {
 
     eh.process();
     if (!eh.options.callOnce) {
-        $(document).ready(function () { eh.process(); });
-        $(window).load(function () { eh.process(); });
-        $(window).resize(function () { eh.process(); });
+        $(document).on('ready', function () { eh.process(); });
+        $(window).on('load', function () { eh.process(); });
+        $(window).on('resize', function () { eh.process(); });
     }
     setTimeout(function () { eh.process(); }, 100);
 
