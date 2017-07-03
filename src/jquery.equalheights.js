@@ -24,22 +24,23 @@ $.fn.equalHeights = function (options) {
 
     eh.process = function () {
         eh.clearHeights();
+        
+        if ($(eh.list).length > 1) {
+            var maxHeight = 0;
+            if (eh.options.doProcessing()) {
+                $(eh.list).each(function () {
+                    var height = eh.options.useOuterHeight
+                               ? $(this).outerHeight()
+                               : $(this).height();
+                    maxHeight = Math.max(height, maxHeight);
+                });
+                maxHeight += eh.options.extraHeight
 
-        var maxHeight = 0;
-        if (eh.options.doProcessing()) {
-            $(eh.list).each(function () {
-                var height = eh.options.useOuterHeight
-                           ? $(this).outerHeight()
-                           : $(this).height();
-                maxHeight = Math.max(height, maxHeight);
-            });
-            maxHeight += eh.options.extraHeight
-
-            $(eh.list).each(function () {
-                $(this).css('height', maxHeight);
-            });
+                $(eh.list).each(function () {
+                    $(this).css('height', maxHeight);
+                });
+            }
         }
-
         eh.options.processed();
     }
 
