@@ -1,5 +1,5 @@
 /**!
- * jquery.equalheights v1.0.1
+ * jquery.equalheights v1.0.2
  * https://github.com/helixgroup/jquery.equal-heights
  * 
  * Copyright 2017 Helix Group
@@ -19,6 +19,8 @@ $.fn.equalHeights = function (options) {
     eh.options.processed = eh.options.processed || function () { };
     eh.options.doProcessing = eh.options.doProcessing || function () { return true; }
     eh.options.callOnce = eh.options.callOnce == undefined ? false : !!eh.options.callOnce;
+    eh.options.imageSelector = eh.options.imageSelector;
+    
     eh.list = [];
     _this.each(function () { eh.list.push($(this)); });
 
@@ -65,6 +67,10 @@ $.fn.equalHeights = function (options) {
         $(document).on('ready', function () { eh.process(); });
         $(window).on('load', function () { eh.process(); });
         $(window).on('resize', function () { eh.process(); });
+        $(eh.options.imageSelector).on('load', function () { eh.process(); });
+        $(eh.list).each(function () {
+            $(this).find('img').on('load', function () { eh.process(); });
+        });
     }
     setTimeout(function () { eh.process(); }, 100);
 
