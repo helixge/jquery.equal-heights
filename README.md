@@ -3,6 +3,8 @@ Jquery plugin for making elements equal height. Bu default UI will be updated at
 * document.ready
 * window.load
 * window.resize
+* load event of every image file found under the selected items
+* load event of additional image files gives thorugh **options.imageSelector** property
 
 ## Example
 $('.row .col-md4').equalHeights({ /* options and callbacks */});
@@ -24,6 +26,11 @@ Default value is **false**.
 Boolean value.
 When set to true heights will be equalized only once: Document.Ready, Window.Load and Window.Resize events will not trigger the UI update.
 Default value is **false**.
+
+### imageSelector
+String value.
+Will add an **onload** event handler on the selector and trigger the heights update. It isuseful when heigts need to be retriggered after ceratin images are loaded that are outside of the main selector.
+Default value is **null**
 
 ## Callbacks
 ### processed
