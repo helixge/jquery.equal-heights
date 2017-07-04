@@ -1,5 +1,5 @@
-# jquery-equalheights
-Jquery plugin for making elements equal height. Bu default UI will be updated at time of the execution and addtitionaly on the following events:
+# jquery.equal-heights
+jQuery plugin for making elements equal height. Bu default UI will be updated at time of the execution and addtitionaly on the following events:
 * document.ready
 * window.load
 * window.resize
