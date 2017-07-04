@@ -1,6 +1,6 @@
 /**!
  * jquery.equalheights v1.0.1
- * https://github.com/helixgroup/jquery-equalheights
+ * https://github.com/helixgroup/jquery.equal-heights
  * 
  * Copyright 2017 Helix Group
  * Released under the MIT License.
