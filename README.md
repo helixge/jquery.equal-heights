@@ -47,6 +47,8 @@ Expected retuen type is boolean. When true is returned, UI will be processed. Wh
 ## Functions
 ### process
 Will instruct plugin to recalculate heights immediately.
-example: 
+#### example:
+```
 var eh = $('your-element-selector').equalHeights();
 eh.process();
+```
