@@ -42,3 +42,11 @@ No return values is expected
 Function is executed before each UI update.
 No input parameters are supplied
 Expected retuen type is boolean. When true is returned, UI will be processed. When false is returned UI will not be processed. This callbacck is useful when you need to conditionally set equal heights (ex. based on media query or screen resolution)
+
+
+## Functions
+### process
+Will instruct plugin to recalculate heights immediately.
+example: 
+var eh = $('your-element-selector').equalHeights();
+eh.process();
