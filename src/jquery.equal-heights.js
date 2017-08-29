@@ -32,7 +32,7 @@ $.fn.equalHeights = function (options) {
             if (eh.options.doProcessing()) {
                 $(eh.list).each(function () {
                     var height = eh.options.useOuterHeight
-                               ? $(this).outerHeight()
+                               ? $(this).outerHeight(true)
                                : $(this).height();
                     maxHeight = Math.max(height, maxHeight);
                 });
