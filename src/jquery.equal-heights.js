@@ -37,7 +37,8 @@ $.fn.equalHeights = function (options) {
                     maxHeight = Math.max(height, maxHeight);
                 });
                 maxHeight += eh.options.extraHeight
-
+                maxHeight = Math.ceil(maxHeight)
+                
                 $(eh.list).each(function () {
                     $(this).css('height', maxHeight);
                 });
