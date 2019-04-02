@@ -58,7 +58,19 @@ $.fn.equalHeights = function (options) {
         eh.clearHeights();
         eh.list = [];
     }
-
+    
+    eh.addElem = function (elem) {
+        eh.removeElem(elem);
+        eh.list.push($(elem));
+    }
+    
+    eh.removeElem = function (elem) {
+        let index = eh.list.indexOf(elem);
+        if(index !== -1) {
+          eh.list.splice(index, 1);
+        }
+    }
+    
     _this.on('resizeHeights', function () {
         eh.process();
     });
